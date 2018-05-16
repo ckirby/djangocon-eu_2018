@@ -203,7 +203,11 @@ ___
 
 - Django-Modelqueryform https://github.com/ckirby/django-modelqueryform
 - Riskscape https://bitbucket.org/commoninf/riskscape
-- This talk and example code 
+- This talk and example code https://github.com/ckirby/djangocon-eu_2018
+
+---
+
+## Questions & Thank You
 
 
 
