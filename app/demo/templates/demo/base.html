@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+    <style media="screen" type="text/css">
+        form p{float:left;}
+        form ul{float: left;margin-right:10px; padding-right: 10px; border-right: 1px dotted black;height:125px;}
+        div{clear: both;}
+    </style>
+</head>
+<body>
+<form id="search-form" method="POST" action="." {% if not name == 'Basic' and not name == 'Search' %}style="display: none;"{% endif %}>{% csrf_token %}
+    <table>
+    {{ form.as_p }}
+    </table>
+    <div>
+    <button onclick="send_form('{% url 'search' %}')">Search</button>
+    </div>
+</form>
+<div>
+{% block data %}
+{% endblock %}
+</div>
+<script type="text/javascript">
+    function send_form(url){
+        let frm = document.getElementById('search-form');
+        frm.action = url;
+        frm.submit();
+    }
+</script>
+</body>
+</html>

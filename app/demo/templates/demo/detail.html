@@ -1,0 +1,7 @@
+{% extends 'demo/search.html' %}
+
+{% block data %}
+    {{ block.super }}
+    Details about a house<br/>
+    <a href="#" onclick="send_form('{% url 'search' %}'); return false;">Back to Results</a>
+{% endblock %}

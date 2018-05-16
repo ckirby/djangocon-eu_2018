@@ -1,0 +1,7 @@
+{% extends 'demo/base.html' %}
+
+{% block data %}
+    <a href="{% url 'search-link' 1 %}"> Large Homes</a>
+    <a href="{% url 'search-link' 2 %}"> Apartments</a>
+    <a href="{% url 'search-link' 3 %}"> Efficiencies</a>
+{% endblock %}

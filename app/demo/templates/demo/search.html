@@ -1,0 +1,15 @@
+{% extends 'demo/base.html' %}
+
+{% block data %}
+    <p>
+    <a href="{% url 'home' %}">Search</a>
+    </p>
+    <p>
+    {% for k,v in form.pretty_print_query.items %}
+        <strong>{{ k }}</strong>: {{ v }}<br/>
+    {%  endfor %}
+    {% if name == 'Results' %}
+    <a href="#" onclick="send_form('{% url 'detail' %}'); return false;">Details</a>
+    {% endif %}
+    </p>
+{% endblock %}
