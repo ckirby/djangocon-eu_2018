@@ -78,7 +78,7 @@ class HouseModelForm(forms.ModelQueryForm):
 def basic(request):
     if request.method == 'POST':
         form = HouseQueryForm(request.POST)
-	#do_stuff()
+        result = form.process()#or form.process(House.objects.filter(<something>))
     else:
         form = HouseQueryForm()
 
@@ -128,7 +128,7 @@ def search(request, link=None):
     search_form = forms.process_queryform(request, link)
 
     return render(request, 'demo/search.html',
-                  {'name': 'Results', 'form': search_form})
+                  {'name': 'Results', 'form': search_form, 'results': results})
 
 def detail(request):
     search_form = forms.process_queryform(request)
