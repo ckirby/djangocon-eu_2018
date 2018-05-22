@@ -2,24 +2,27 @@
 ## Chaim Kirby
 ### DjangoCon Europe 2018
 
+^Forms are great...for data entry. A contact page, django admin, site signup? Use a form! Today I'm going to show you a way to use a forms not for data collection, but as the core interactive element for user driven interaction.
+
 ---
 [.footer: http://www.barksdale.af.mil/News/Article-Display/Article/320976/open-hydrant/]
 ![](images/hydrant.jpg)
 
-^Web applications for data analysis usually have a lot of data  
+^We have lots of data. Sometimes there are people who want to understand the data. They could use AI and Machine learning, but our users aren't always technical. They ask us to build an interface for understanding and inspecting the data they are interested in. You can also use the techniques I am about to show on any site that uses "advanced" or "power" search
 
 ---
 [.footer: cc-by-sa-2.0 Ivy Dawned at https://www.flickr.com/photos/30264437@N02/4148943034]
 ![original](images/firetruck.jpg)
 
 
-^Python and SQL are very good at handling lots of data
+^Python and SQL are very good at handling lots of data. Great, we have the tools we need.
 
 ---
 [.footer: CC0]
 ![](images/straw.jpg)
 
 ^We just need a better way for the user to get the data to the analysis
+-Maybe tell story of human workflow replaced by riskscape workflow here?
 
 ---
 
@@ -44,6 +47,8 @@
 
 - Form context carries through pages
 - Form context initiated via link/button
+
+*All examples using Django 1.11*
 
 ___
 
@@ -85,6 +90,9 @@ def basic(request):
     return render(request, 'demo/base.html',
                   {'name': 'Basic', 'form': form})
 ```
+
+^I prefer to use function based views, but you can use Class based views. 
+
 ___
 
 ![fit](images/basic.png)
@@ -112,6 +120,8 @@ def home(request):
                   {'name': 'Search', 'form': search_form})
 ```
 
+^Now we are going to take that form logic an move it into it's own method for easy re-use.I'm pretty sure you could even make a queryform mixin. You could also implement this as a decorator, or even middleware and context processors if you want the feature everywhere.
+
 ___
 
 #
@@ -136,9 +146,10 @@ def detail(request):
     return render(request, 'demo/detail.html',
                   {'name': 'Detail', 'form': search_form})
 ```
+ 
 ---
 
-# Target form context to pages
+# Carry form context between pages
 
 - Render the form on all pages. Hidden is ok. 
 - Use this javascript to target the form to the correct page
@@ -208,6 +219,8 @@ ___
 ---
 
 ## Questions & Thank You
+
+^I am around all week and can talk about this technique, modelqueryform, or riskscape
 
 
 
