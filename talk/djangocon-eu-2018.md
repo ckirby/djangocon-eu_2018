@@ -224,6 +224,9 @@ ___
 
 ## Questions & Thank You
 
+chaimkirby@gmail.com
+@chaimkirby
+
 ^I am around all week and can talk about this technique, modelqueryform, or riskscape
 
 
