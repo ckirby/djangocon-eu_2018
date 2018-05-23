@@ -2,7 +2,11 @@
 ## Chaim Kirby
 ### DjangoCon Europe 2018
 
-^Forms are great...for data entry. A contact page, django admin, site signup? Use a form! Today I'm going to show you a way to use a forms not for data collection, but as the core interactive element for user driven interaction.
+^This morning I'm going to talk about forms. Forms are great. A contact page, django admin, site signup? Use a form! 50% of CRUD (C and U)? More forms! Forms are great for shuttling date into our database.
+ 
+^I'm not talking about any of that.
+
+^Today I'm going to show you a way to use a forms not for data collection, but as the core  element for user driven interaction.
 
 ---
 [.footer: http://www.barksdale.af.mil/News/Article-Display/Article/320976/open-hydrant/]
